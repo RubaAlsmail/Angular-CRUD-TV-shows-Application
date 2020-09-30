@@ -1,0 +1,26 @@
+<table class="table table-hover">
+    <tr *ngFor="let tvshow of service.list">
+      <td (click)="populateForm(tvshow)">[{{tvshow.Showname}}]-{{tvshow.Genre}}</td>
+      <td (click)="populateForm(tvshow)">{{tvshow.SeasonNum}}</td>
+      <td (click)="populateForm(tvshow)">{{tvshow.ReleaseDate}}</td>
+      <td><button  (click)="onDelete(tvshow.ShowID)" class="btn btn-sm btn-outline-danger">X</button></td>
+    </tr>
+  </table>
+
+ <!-- 
+    
+    
+    <table class="table table-hover">
+    <tr *ngFor="let tvshow of service.list">
+      <td >[{{tvshow.Showname}}]-{{tvshow.Genre}}</td>
+      <td >{{tvshow.SeasonNum}}</td>
+      <td >{{tvshow.ReleaseDate}}</td>
+      <td><button class="btn btn-sm btn-outline-danger">X</button></td>
+    </tr>
+  </table>-->
+
+  <!--    ShowID: number;
+    Showname: string;
+    Genre: string;
+    SeasonNum: number;
+    ReleaseDate: number; -->

@@ -1,0 +1,41 @@
+<form #form="ngForm" (submit)="onSubmit(form)">
+    <!--here SHOWID input
+    
+        ShowID: number;
+    Showname: string;
+    Genre: string;
+    SeasonNum: number;
+    ReleaseDate: number; -->
+    <input type="hidden" name="ShowID" #ShowID="ngModel" [(ngModel)]="service.formData.ShowID">
+
+    <div class="form-group">
+        <label>Show Name</label>
+        <input name="Showname" #Showname="ngModel" [(ngModel)]="service.formData.Showname" class="form-control" required>
+        <div class="validation-error" *ngIf="Showname.invalid && Showname.touched">This field is required.</div>
+    </div>  
+
+
+      <div class="form-group">
+        <label>Show Genre</label>
+        <input name="Genre" #Genre="ngModel" [(ngModel)]="service.formData.Genre" class="form-control" >
+      </div>
+
+
+      <div class="form-group">
+        <label>Season Number</label>
+        <input name="SeasonNum" #SeasonNum="ngModel" [(ngModel)]="service.formData.SeasonNum" class="form-control" >
+      </div> 
+
+      <div class="form-group">
+        <label>Release Date</label>
+        <input name="ReleaseDate" #ReleaseDate="ngModel" [(ngModel)]="service.formData.ReleaseDate" class="form-control" >
+      </div> 
+
+
+      <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+      </div>
+
+
+
+</form>
